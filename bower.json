@@ -1,0 +1,22 @@
+{
+  "name": "drugcollection",
+  "version": "1.0.0",
+  "authors": [
+    "Max McCarty <mvmccart@gmail.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.4.2",
+    "bootstrap": "3.3.4",
+    "d3": "~3.5.6",
+    "underscore": "~1.8.3",
+    "stellar": "~0.6.2"
+  }
+}

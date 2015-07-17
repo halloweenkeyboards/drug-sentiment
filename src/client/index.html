@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html ng-app="app">
+<head>
+    <!-- bower:css -->
+    <link rel="stylesheet" href="../../bower_components/bootstrap/dist/css/bootstrap.css" />
+    <!-- endbower -->
+
+    <!-- inject:css -->
+    <link rel="stylesheet" href="/.tmp/style.css">
+    <!-- endinject -->
+
+</head>
+<body ng-controller='Drugs'>
+    <div class="container-fluid">
+        <h1 class="jumbotron">{{title}}</h1>
+    </div>
+    <div class="container" id="intro">
+        <p>this is the fruit of my labours?</p>
+    </div>
+    <div class="container-fluid drug-list">
+        <drug-list></drug-list>
+    </div>
+
+    <!-- bower:js -->
+    <script src="../../bower_components/jquery/dist/jquery.js"></script>
+    <script src="../../bower_components/angular/angular.js"></script>
+    <script src="../../bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="../../bower_components/d3/d3.js"></script>
+    <script src="../../bower_components/underscore/underscore.js"></script>
+    <script src="../../bower_components/stellar/jquery.stellar.js"></script>
+    <!-- endbower -->
+
+    <!-- inject:js -->
+    <script src="/src/client/app/app.module.js"></script>
+    <script src="/src/client/app/drugs/drugs.module.js"></script>
+    <script src="/src/client/app/widgets/drug-list.directive.js"></script>
+    <script src="/src/client/app/widgets/drug-report.directive.js"></script>
+    <script src="/src/client/app/drugs/drugs.controller.js"></script>
+    <!-- endinject -->
+</body>

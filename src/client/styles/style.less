@@ -1,0 +1,101 @@
+@reportHeight: 350px;
+
+@purple: #A33F8D;
+@vintageBlack: #3B3B3B;
+@plinky: #FF195B;
+
+body {
+    background-color: @vintageBlack;
+    #intro {
+        color: 'white';
+    }
+}
+
+
+
+.drug-report {
+    border: 1px solid black;
+    margin-bottom: 15px;
+    height: @reportHeight;
+        svg path {
+            opacity: 0.5;
+        }
+}
+
+#dmdma {
+    background-color: lighten(@purple, 25%);
+    border-color: @purple;
+    background-image: url(../src/client/images/mdma.svg);
+    background-repeat: no-repeat;
+    background-position: right;
+    background-size: 75%;
+    background-attachment: fixed;
+    h1 {
+        color : @purple;
+    }
+}
+
+#d5-meo-dalt {
+    background-image: url(../src/client/images/5-meo-dalt.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 50%;
+    background-attachment: fixed;    
+}
+
+#ddmt {
+    background-color: #f24949;
+    color: darken(#6b5e50, 10%);
+    background-image: url(../src/client/images/dmt.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 50%;
+    background-attachment: fixed;
+}
+
+#dether {
+    background-image: url(../src/client/images/ether.svg);
+    background-repeat: no-repeat;
+    background-position: right;
+    background-size: 50%;
+    background-attachment: fixed;
+}
+
+#dpcp {
+    background-image: url(../src/client/images/pcp.svg);
+    background-repeat: no-repeat;
+    background-position: right;
+    background-size: 50%;
+    background-attachment: fixed;
+}
+
+#dmorphine {
+    background-color: #f24949;
+    color: darken(#6b5e50, 10%);
+    background-image: url(../src/client/images/morphine.svg);
+    background-repeat: no-repeat;
+    background-position: right;
+    background-size: 75%;
+    background-attachment: fixed;
+}
+
+#dlsd {
+    background-image: url(../src/client/images/nebula1.jpg);
+    background-repeat: no-repeat;
+    background-position: right;
+    background-size: cover;
+    background-attachment: fixed;   
+}
+
+
+.axis path,
+.axis line {
+    fill: none;
+    stroke: black;
+    shape-rendering: crispEdges;
+}
+
+.axis text {
+    font-family: sans-serif;
+    font-size: 11px;
+}
