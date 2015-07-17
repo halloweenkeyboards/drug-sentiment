@@ -56,7 +56,6 @@
                                     return 'red';
                                 }
                             });
-                        console.log(path);
 
                         // text - percent of positive experiences
                         svg.append('text')

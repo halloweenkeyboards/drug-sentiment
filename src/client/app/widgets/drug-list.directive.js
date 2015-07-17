@@ -33,7 +33,6 @@
                         .orient('bottom')
                         .ticks(3)
                 };
-            console.log('sets up for render...');
             }
         }
     })
