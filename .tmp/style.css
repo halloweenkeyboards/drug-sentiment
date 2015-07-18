@@ -10,8 +10,6 @@ body p span {
   color: #ffff00;
 }
 .drug-report {
-  border: 1px solid black;
-  margin-bottom: 15px;
   height: 350px;
 }
 .drug-report svg path {

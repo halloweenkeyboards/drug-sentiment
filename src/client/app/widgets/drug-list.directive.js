@@ -13,7 +13,7 @@
                         .domain([-1, 1])
                         .range([0 + padding, $scope.w - padding]);
                 $scope.d3Options = {
-                    pieRadius: 200,
+                    pieRadius: 150,
                     pieW: $scope.w * 1.5,
                     pieH: 335,
                     padding: padding,
