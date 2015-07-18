@@ -1,4 +1,4 @@
-(function(){
+(function() {
     'use strict';
 
     angular
@@ -20,12 +20,12 @@
                     $timeout(function() {
                         var pieData = [
                             {
-                                label: "positive",
+                                label: 'positive',
                                 value: drug.positive
                             },
                             {
-                                label: "negative",
-                                value: (100-drug.positive)
+                                label: 'negative',
+                                value: (100 - drug.positive)
                             }
                         ];
 
@@ -33,7 +33,7 @@
 
                         // add group to svg for pie chart
                         var pieG = svg.append('g')
-                            .attr('transform', 'translate(' + ($scope.d3Options.pieW/2) + ',' + ($scope.d3Options.pieH/2) + ')');
+                            .attr('transform', 'translate(' + ($scope.d3Options.pieW / 2) + ',' + ($scope.d3Options.pieH / 2) + ')');
 
                         // define arc
                         var arc = d3.svg.arc()
@@ -41,7 +41,7 @@
 
                         // define pie
                         var pie = d3.layout.pie()
-                            .value(function(d) { return d.value });
+                            .value(function(d) { return d.value; });
 
                         // bind pie to data and define attrs
                         var path = pieG.selectAll('path')
@@ -50,42 +50,42 @@
                             .append('path')
                             .attr('d', arc)
                             .attr('fill', function(d) {
-                                if (d.data.label==='positive') {
+                                if (d.data.label === 'positive') {
                                     return 'blue';
-                                } else  {
+                                } else {
                                     return 'red';
                                 }
                             });
 
                         // text - percent of positive experiences
                         svg.append('text')
-                            .attr('x', ($scope.w/3)*2)
-                            .attr('y', $scope.d3Options.newLineY*6)
+                            .attr('x', ($scope.w / 3) * 2)
+                            .attr('y', $scope.d3Options.newLineY * 6)
                             .attr('fill', 'white')
                             .text(drug.positive + '% positive');
 
                         // append d3 axis
                         svg.append('g')
                             .attr('class', 'axis')
-                            .attr('transform', 'translate(0,' + ($scope.h - ($scope.d3Options.padding*2)) + ')')
+                            .attr('transform', 'translate(0,' + ($scope.h - ($scope.d3Options.padding * 2)) + ')')
                             .call($scope.d3Options.xAxis);
 
                         // text - drug name text
                         svg.append('text')
                             .attr('x', 15)
-                            .attr('y', $scope.d3Options.newLineY*2)
+                            .attr('y', $scope.d3Options.newLineY * 2)
                             .attr('font-size', 30)
                             .attr('textLength', function() {
-                                if ($scope.w>=400) {
-                                    if (drug.name.length<=5) {
-                                        return $scope.w/5;
-                                    } else if (drug.name.length>5 && drug.name.length <=12) {
-                                        return ($scope.w/5)*2;
+                                if ($scope.w >= 400) {
+                                    if (drug.name.length <= 5) {
+                                        return $scope.w / 5;
+                                    } else if (drug.name.length > 5 && drug.name.length <= 12) {
+                                        return ($scope.w / 5) * 2;
                                     } else {
-                                        return $scope.w/2;
+                                        return $scope.w / 2;
                                     }
                                 } else {
-                                    return $scope.w-$scope.d3Options.padding;
+                                    return $scope.w - $scope.d3Options.padding;
                                 }
                             })
                             .attr('fill', function() {
@@ -103,13 +103,13 @@
                         // text - number of experiences
                         svg.append('text')
                             .attr('x', 15)
-                            .attr('y', $scope.d3Options.newLineY*5)
+                            .attr('y', $scope.d3Options.newLineY * 5)
                             .text(drug.experiences.length + ' experiences');
 
                         // text - average sentiment score
                         svg.append('text')
                             .attr('x', 15)
-                            .attr('y', $scope.d3Options.newLineY*12)
+                            .attr('y', $scope.d3Options.newLineY * 12)
                             .attr('font-size', 90)
                             .attr('fill', 'white')
                             .text(drug.average.toFixed(3));
@@ -125,7 +125,7 @@
                             .attr('cx', function(d) {
                                 return $scope.d3Options.xScale(d.score);
                             })
-                            .attr('cy', ($scope.h - ($scope.d3Options.padding*2))-($scope.d3Options.circleRadius*2))
+                            .attr('cy', ($scope.h - ($scope.d3Options.padding * 2)) - ($scope.d3Options.circleRadius * 2))
                             .attr('r', $scope.d3Options.circleRadius)
                             .attr('fill', function(d) {
                                 if (d.score > 0) {
@@ -151,12 +151,12 @@
     **/
                             .append('svg:title')
                             .text(function(d) {
-                                return d.title + "\nsentiment: " + d.score + "\nexperience ID: " + d.number;
+                                return d.title + '\nsentiment: ' + d.score + '\nexperience ID: ' + d.number;
                             });
-                    },1000);
+                    }, 1000);
 
-                }
+                };
             }
-        }
-    })
+        };
+    });
 })();

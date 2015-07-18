@@ -10,9 +10,8 @@
     function Drugs($scope, $http) {
         $scope.title = 'the final report on drug experience sentiment';
         $scope.drugs = [];
-        $scope.w = $('.container-fluid').width(); 
-        $scope.h = $('.container-fluid').height(); 
-
+        $scope.w = $('.container-fluid').width();
+        $scope.h = $('.container-fluid').height();
 
         angular.element(document).ready(function() {
             $scope.getDrugs();
@@ -22,7 +21,7 @@
         function resize() {
             console.log('screen resizd');
             console.log('screen width: ' + $('.drug-report').width() + ' pixels');
-        } 
+        }
 
         $scope.getDrugs = function() {
             $http.get('/api/drugs')
@@ -30,10 +29,10 @@
                 var minimumExps = 50;
                 var culledData = [];
                 _.each(data, function(doc) {
-                    if (doc.experiences.length>=minimumExps) {
+                    if (doc.experiences.length >= minimumExps) {
                         culledData.push(doc);
                     }
-                })
+                });
                 $scope.drugs = culledData;
                 //$scope.drawD3();
             })
@@ -44,7 +43,7 @@
 
         $scope.meetsMinimum = function(drug) {
             var minimum = 50;
-            if (drug.experiences.length>=minimum) {
+            if (drug.experiences.length >= minimum) {
                 return true;
             } else {
                 return false;

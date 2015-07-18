@@ -1,4 +1,4 @@
-(function(){
+(function() {
     'use strict';
 
     angular
@@ -11,10 +11,10 @@
                 var padding = 25;
                 var xScale = d3.scale.linear()
                         .domain([-1, 1])
-                        .range([0+padding, $scope.w-padding]);
+                        .range([0 + padding, $scope.w - padding]);
                 $scope.d3Options = {
                     pieRadius: 200,
-                    pieW: $scope.w*1.5,
+                    pieW: $scope.w * 1.5,
                     pieH: 335,
                     padding: padding,
                     colorBuffer: 55,
@@ -34,9 +34,6 @@
                         .ticks(3)
                 };
             }
-        }
-    })
-
-
-
+        };
+    });
 })();
