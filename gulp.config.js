@@ -8,6 +8,8 @@ module.exports = function() {
         client: client,
         temp: temp,
         server: server,
+        build: './build/',
+        images: client + 'images/**/*.*',
         alljs: [
           './src/**/*.js',
           './*.js',

@@ -11,6 +11,19 @@ var port = process.env.PORT || config.defaultPort;
 gulp.task('help', $.taskListing);
 gulp.task('default', ['help']);
 
+gulp.task('clean-images', function(done) {
+    clean(config.build + 'images/**/*.*', done);
+});
+
+gulp.task('images', ['clean-images'], function() {
+    log('copying and compressing images');
+
+    return gulp
+        .src(config.images)
+        .pipe($.imagemin({optimizationLevel:4}))
+        .pipe(gulp.dest(config.build + 'images'))
+});
+
 gulp.task('vet', function() {
     log('vetting js now');
     return gulp
@@ -22,8 +35,7 @@ gulp.task('vet', function() {
 });
 
 gulp.task('clean-styles', function(done) {
-    var files = config.temp + '**/*.css';
-    clean(files, done);
+    clean(config.temp + '**/*.css', done);
 });
 
 gulp.task('styles', ['clean-styles'], function() {
