@@ -149,7 +149,7 @@
     **/
                             .append('svg:title')
                             .text(function(d) {
-                                return d.title + "\nsentiment: " + d.score + "\nnumber: " + d.number;
+                                return d.title + "\nsentiment: " + d.score + "\nexperience ID: " + d.number;
                             });
                     },1000);
 
