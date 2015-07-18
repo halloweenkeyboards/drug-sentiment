@@ -91,6 +91,8 @@
                             .attr('fill', function() {
                                 if (drug.name === 'DMT') {
                                     return 'black';
+                                } else if (drug.name === 'MDMA') {
+                                    return '#07566b';
                                 } else {
                                     return $scope.d3Options.colors.plinky;
                                 }

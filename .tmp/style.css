@@ -18,16 +18,12 @@ body p span {
   opacity: 0.5;
 }
 #dmdma {
-  background-color: #d38ec4;
-  border-color: #a33f8d;
+  background-color: #e6425e;
   background-image: url(../src/client/images/mdma.svg);
   background-repeat: no-repeat;
   background-position: right;
   background-size: 75%;
   background-attachment: fixed;
-}
-#dmdma h1 {
-  color: #a33f8d;
 }
 #ddmt {
   background-color: #f24949;
