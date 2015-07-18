@@ -15,7 +15,18 @@
         <h1 class="jumbotron">{{title}}</h1>
     </div>
     <div class="container" id="intro">
-        <p>this is the fruit of my labours?</p>
+        <p>
+        &nbsp;&nbsp;&nbsp;&nbsp;The page before you, which I pray you are viewing while in great health, in safety, and with the respect and admiration of your peers, is an opportunity to see something before it is officially available. Yes, a "sneak peek" maybe you would call it.<br /><br />
+        Call it what you will!<br /><br />
+        It attempts to answer the question, "which drugs are the best drugs?"<br /><br />
+        &nbsp;&nbsp;&nbsp;&nbsp;After some pretty gratuitous web scraping of an unnamed non-profit's site yielded over 8,000 drug experience reports, those were then fed into an unnamed multinational technology corporation's "sentiment analysis" API, at a rate of 1,000 a day. Their algorithm "reads" some text, and scores it from -1 to 1 with zero being neutral sentiment.<br /><br />
+        &nbsp;&nbsp;&nbsp;&nbsp;I only pulled experience reports from the site that had one drug, the drug of interest, listed in the description. There were many reports with combinations of various drugs listed in the descriptions, those were left alone. For the initial data I had exactly 100 drugs but i've thrown out those with under 50 experience reports for this projection, leaving only 37. The data on the other 2/3 of the drugs will be viewable in the final build, so you can look forward to seeing how ether, crack, and a ton more analogs stacked up.<br /><br />
+        <span class="glyphicon glyphicon-warning-sign"></span><span class="glyphicon glyphicon-warning-sign"></span>&nbsp;&nbsp;&nbsp;&nbsp;Make sure to mouseover the dots on the scale to see their titles, sentiment scores and experience ID. you can view an experience report by pointing your browser to:<br />
+        https://www.erowid.org/experiences/exp.php?ID=&nbsp;&nbsp;&nbsp;(experience ID goes here)<br /><br />
+        &nbsp;&nbsp;&nbsp;&nbsp;So here they are, listed in descending order of average seniment score. Make sure to also pay attention to the ratio of positive to negative experiences. You should start a band, then record an album while doing the top 5 drugs, then record an album while doing the bottom 5 drugs, and compare them.<br /><br />
+        long live the web scrape
+        </p>
+
     </div>
     <div class="container-fluid drug-list">
         <drug-list></drug-list>
@@ -33,8 +44,8 @@
     <!-- inject:js -->
     <script src="/src/client/app/app.module.js"></script>
     <script src="/src/client/app/drugs/drugs.module.js"></script>
+    <script src="/src/client/app/drugs/drugs.controller.js"></script>
     <script src="/src/client/app/widgets/drug-list.directive.js"></script>
     <script src="/src/client/app/widgets/drug-report.directive.js"></script>
-    <script src="/src/client/app/drugs/drugs.controller.js"></script>
     <!-- endinject -->
 </body>

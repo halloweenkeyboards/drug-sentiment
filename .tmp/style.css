@@ -1,8 +1,13 @@
 body {
   background-color: #3b3b3b;
 }
-body #intro {
-  color: 'white';
+body p {
+  background-color: #080808;
+  color: #ffffff;
+  padding: 20px;
+}
+body p span {
+  color: #ffff00;
 }
 .drug-report {
   border: 1px solid black;
