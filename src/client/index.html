@@ -21,6 +21,7 @@
         <drug-list></drug-list>
     </div>
 
+    <!-- build:js js/lib.js -->
     <!-- bower:js -->
     <script src="../../bower_components/jquery/dist/jquery.js"></script>
     <script src="../../bower_components/angular/angular.js"></script>
@@ -29,7 +30,9 @@
     <script src="../../bower_components/underscore/underscore.js"></script>
     <script src="../../bower_components/stellar/jquery.stellar.js"></script>
     <!-- endbower -->
+    <!-- endbuild -->
 
+    <!-- build:js js/app.js -->
     <!-- inject:js -->
     <script src="/src/client/app/app.module.js"></script>
     <script src="/src/client/app/drugs/drugs.module.js"></script>
@@ -37,4 +40,9 @@
     <script src="/src/client/app/widgets/drug-list.directive.js"></script>
     <script src="/src/client/app/widgets/drug-report.directive.js"></script>
     <!-- endinject -->
+
+    <!-- inject:templates:js -->
+    <!-- endinject -->
+
+    <!-- endbuild -->
 </body>
