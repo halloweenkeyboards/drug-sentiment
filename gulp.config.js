@@ -28,7 +28,16 @@ module.exports = function() {
         },
         nodeServer: server + 'app.js',
         defaultPort: 8686,
-        browserReloadDelay: 1000
+        browserReloadDelay: 1000,
+        htmlTemplates: clientApp + '**/*.html',
+        templateCache: {
+            file: 'templates.js',
+            options: {
+                module : 'app',
+                standAlone: false,
+                root: 'app/'
+            }
+        }
     };
     config.getWiredepOptions = function() {
         var options = {

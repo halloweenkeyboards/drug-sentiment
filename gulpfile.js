@@ -32,7 +32,7 @@ gulp.task('clean', function(done) {
     var delconfig = [].concat(config.build, config.temp);
     log('Cleaning: ' + $.util.colors.blue(delconfig));
     del(delconfig, done);
-})
+});
 
 gulp.task('images', ['clean-images'], function() {
     log('copying and compressing images');
@@ -41,6 +41,19 @@ gulp.task('images', ['clean-images'], function() {
         .src(config.images)
         .pipe($.imagemin({optimizationLevel:4}))
         .pipe(gulp.dest(config.build + 'images'));
+});
+
+gulp.task('templatecache', ['clean-code'], function() {
+    log('creating angularJS $templateCache');
+
+    return gulp
+        .src(config.htmlTemplates)
+        .pipe($.minifyHtml({empty : true}))
+        .pipe($.angularTemplatecache(
+            config.templateCache.file,
+            config.templateCache.options
+        ))
+        .pipe(gulp.dest(config.temp));
 });
 
 gulp.task('vet', function() {
