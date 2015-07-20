@@ -60,6 +60,7 @@ gulp.task('optimize', ['inject'], function() {
     log('optimizing js, css, html');
 
     var templateCache = config.temp + config.templateCache.file;
+    var assets = $.useref.assets({searchPath : './'});
 
     return gulp
         .src(config.index)
@@ -67,6 +68,9 @@ gulp.task('optimize', ['inject'], function() {
         .pipe($.inject(gulp.src(templateCache, {read : false}), {
             starttag : '<!-- inject:templates:js -->'
         }))
+        .pipe(assets)
+        .pipe(assets.restore())
+        .pipe($.useref())
         .pipe(gulp.dest(config.build));
 });
 
