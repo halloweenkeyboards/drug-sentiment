@@ -9,6 +9,7 @@ module.exports = function() {
         temp: temp,
         server: server,
         build: './build/',
+        html: clientApp + '**/*.html',
         images: client + 'images/**/*.*',
         alljs: [
           './src/**/*.js',

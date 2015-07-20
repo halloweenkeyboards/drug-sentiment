@@ -1,0 +1,51 @@
+body {
+  background-color: #3b3b3b;
+}
+body p {
+  background-color: #080808;
+  color: #ffffff;
+  padding: 20px;
+}
+body p span {
+  color: #ffff00;
+}
+.drug-report {
+  height: 350px;
+}
+.drug-report svg path {
+  opacity: 0.5;
+}
+#dmdma {
+  background-color: #e6425e;
+  background-image: url(../src/client/images/mdma.svg);
+  background-repeat: no-repeat;
+  background-position: right;
+  background-size: 75%;
+  background-attachment: fixed;
+}
+#ddmt {
+  background-color: #f24949;
+  color: #4e443a;
+  background-image: url(../src/client/images/dmt.svg);
+  background-repeat: no-repeat;
+  background-position: 35% 50%;
+  background-size: 36%;
+  background-attachment: fixed;
+}
+#dlsd {
+  background-image: url(../src/client/images/nebula1.jpg);
+  background-repeat: no-repeat;
+  background-position: right;
+  background-size: cover;
+  background-attachment: fixed;
+}
+.axis path,
+.axis line {
+  fill: none;
+  stroke: black;
+  shape-rendering: crispEdges;
+}
+.axis text {
+  font-family: sans-serif;
+  font-size: 11px;
+}

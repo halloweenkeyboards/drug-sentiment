@@ -114,7 +114,16 @@ gulp.task('inject', ['wiredep', 'styles', 'templatecache'], function() {
 });
 
 gulp.task('serve-dev', ['inject'], function() {
-    var isDev = true;
+    serve(true /* isDev */);
+});
+
+gulp.task('serve-build', ['optimize'], function() {
+    serve(false /* isDev */);
+});
+
+/////
+
+function serve(isDev) {
     var nodeOptions = {
         script: config.nodeServer,
         delayTime: 1,
@@ -135,7 +144,7 @@ gulp.task('serve-dev', ['inject'], function() {
         })
         .on('start', function() {
             log('*** nodemon started');
-            startBrowserSync();
+            startBrowserSync(isDev);
         })
         .on('crash', function() {
             log('*** nodemon crashed: script crashed for some reason');
@@ -143,9 +152,7 @@ gulp.task('serve-dev', ['inject'], function() {
         .on('exit', function() {
             log('*** nodemon exited cleanly');
         });
-});
-
-/////
+}
 
 function changeEvent(event) {
     var srcPattern = new RegExp('/.*(?=/' + config.source + ')/');
@@ -169,23 +176,27 @@ function clean(path, done) {
     del(path, done);
 }
 
-function startBrowserSync() {
+function startBrowserSync(isDev) {
     if (args.nosync || browserSync.active) {
         return;
     }
     log('starting browser-sync on port ' + port);
 
+    if (isDev) {
     gulp.watch([config.less], ['styles'])
       .on('change', function(event) { changeEvent(event); });
-
+    } else {
+    gulp.watch([config.less, config.js, config.html], ['optimize', browserSync.reload])
+      .on('change', function(event) { changeEvent(event); });    
+    }
     var options = {
         proxy: 'localhost:' + port,
         port: 8681,
-        files: [
+        files: isDev ? [
           config.client + '**/*.*',
           '!' + config.less,
           config.temp + '**/*.css'
-        ],
+        ] : [],
         ghostMode: {
             clicks: true,
             location: false,
