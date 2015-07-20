@@ -19,6 +19,15 @@ gulp.task('clean-styles', function(done) {
     clean(config.temp + '**/*.css', done);
 });
 
+gulp.task('clean-code', function(done) {
+    var files = [].concat(
+        config.temp + '**/*.js',
+        config.build + '**/*.html',
+        config.build + 'js/**/*.js'
+    );
+    clean(files, done);
+});
+
 gulp.task('clean', function(done) {
     var delconfig = [].concat(config.build, config.temp);
     log('Cleaning: ' + $.util.colors.blue(delconfig));
