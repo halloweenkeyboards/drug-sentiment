@@ -15,6 +15,16 @@ gulp.task('clean-images', function(done) {
     clean(config.build + 'images/**/*.*', done);
 });
 
+gulp.task('clean-styles', function(done) {
+    clean(config.temp + '**/*.css', done);
+});
+
+gulp.task('clean', function(done) {
+    var delconfig = [].concat(config.build, config.temp);
+    log('Cleaning: ' + $.util.colors.blue(delconfig));
+    del(delconfig, done);
+})
+
 gulp.task('images', ['clean-images'], function() {
     log('copying and compressing images');
 
@@ -32,10 +42,6 @@ gulp.task('vet', function() {
 		.pipe($.jshint())
 		.pipe($.jshint.reporter('jshint-stylish', {verbose:true}))
         .pipe($.jshint.reporter('fail'));
-});
-
-gulp.task('clean-styles', function(done) {
-    clean(config.temp + '**/*.css', done);
 });
 
 gulp.task('styles', ['clean-styles'], function() {
