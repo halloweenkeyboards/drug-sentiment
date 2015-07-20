@@ -56,6 +56,20 @@ gulp.task('templatecache', ['clean-code'], function() {
         .pipe(gulp.dest(config.temp));
 });
 
+gulp.task('optimize', ['inject'], function() {
+    log('optimizing js, css, html');
+
+    var templateCache = config.temp + config.templateCache.file;
+
+    return gulp
+        .src(config.index)
+        .pipe($.plumber())
+        .pipe($.inject(gulp.src(templateCache, {read : false}), {
+            starttag : '<!-- inject:templates:js -->'
+        }))
+        .pipe(gulp.dest(config.build));
+});
+
 gulp.task('vet', function() {
     log('vetting js now');
     return gulp
