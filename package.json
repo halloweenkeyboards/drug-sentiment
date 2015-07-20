@@ -3,6 +3,11 @@
   "version": "1.0.0",
   "description": "",
   "main": "src/server/app.js",
+  "scripts": {
+    "init": "npm install",
+    "install": "bower install",
+    "start": "node src/server/app.js"
+  },
   "dependencies": {
     "express": "^4.13.1",
     "mongoose": "^4.0.6",
