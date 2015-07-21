@@ -17,7 +17,7 @@ body p span {
 }
 #dmdma {
   background-color: #e6425e;
-  background-image: url(../src/client/images/mdma.svg);
+  background-image: url(../images/mdma.svg);
   background-repeat: no-repeat;
   background-position: right;
   background-size: 75%;
@@ -26,14 +26,14 @@ body p span {
 #ddmt {
   background-color: #f24949;
   color: #4e443a;
-  background-image: url(../src/client/images/dmt.svg);
+  background-image: url(../images/dmt.svg);
   background-repeat: no-repeat;
   background-position: 35% 50%;
   background-size: 36%;
   background-attachment: fixed;
 }
 #dlsd {
-  background-image: url(../src/client/images/nebula1.jpg);
+  background-image: url(../images/nebula1.jpg);
   background-repeat: no-repeat;
   background-position: right;
   background-size: cover;
