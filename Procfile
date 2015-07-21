@@ -1,1 +1,1 @@
-web: node node_modules/gulp/bin/gulp serve-build
+web: NODE_ENV=build node src/server/app.js
