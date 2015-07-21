@@ -56,7 +56,7 @@ gulp.task('templatecache', ['clean-code'], function() {
         .pipe(gulp.dest(config.temp));
 });
 
-gulp.task('optimize', ['inject'], function() {
+gulp.task('optimize', ['inject','images'], function() {
     log('optimizing js, css, html');
 
     var templateCache = config.temp + config.templateCache.file;
@@ -74,9 +74,11 @@ gulp.task('optimize', ['inject'], function() {
         .pipe(cssFilter)
         .pipe($.csso())        
         .pipe(cssFilter.restore())
+/**
         .pipe(jsFilter)
         .pipe($.uglify())
         .pipe(jsFilter.restore())
+**/
         .pipe(assets.restore())
         .pipe($.useref())
         .pipe(gulp.dest(config.build));
