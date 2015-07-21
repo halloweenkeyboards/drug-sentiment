@@ -7,7 +7,9 @@
     "url": "https://github.com/halloweenkeyboards/drug-sentiment.git"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "init": "npm install",
+    "install": "bower install",
+    "start": "node src/server/app.js"
   },
   "dependencies": {
     "express": "^4.13.1",
