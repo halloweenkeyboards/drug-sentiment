@@ -56,7 +56,7 @@ gulp.task('templatecache', ['clean-code'], function() {
         .pipe(gulp.dest(config.temp));
 });
 
-gulp.task('optimize', ['inject','images'], function() {
+gulp.task('optimize', ['inject', 'images'], function() {
     log('optimizing js, css, html');
 
     var templateCache = config.temp + config.templateCache.file;
@@ -72,7 +72,7 @@ gulp.task('optimize', ['inject','images'], function() {
         }))
         .pipe(assets)
         .pipe(cssFilter)
-        .pipe($.csso())        
+        .pipe($.csso())
         .pipe(cssFilter.restore())
 /**
         .pipe(jsFilter)
@@ -193,11 +193,11 @@ function startBrowserSync(isDev) {
     log('starting browser-sync on port ' + port);
 
     if (isDev) {
-    gulp.watch([config.less], ['styles'])
-      .on('change', function(event) { changeEvent(event); });
+        gulp.watch([config.less], ['styles'])
+        .on('change', function(event) { changeEvent(event); });
     } else {
-    gulp.watch([config.less, config.js, config.html], ['optimize', browserSync.reload])
-      .on('change', function(event) { changeEvent(event); });    
+        gulp.watch([config.less, config.js, config.html], ['optimize', browserSync.reload])
+        .on('change', function(event) { changeEvent(event); });
     }
     var options = {
         proxy: 'localhost:' + port,
