@@ -8,7 +8,7 @@
   },
   "scripts": {
     "init": "npm install",
-    "postinstall": "bower install && gulp serve-build",
+    "postinstall": "bower install && gulp optimize",
     "start": "node src/server/app.js"
   },
   "dependencies": {
