@@ -11,6 +11,9 @@
     "postinstall": "bower install && gulp optimize",
     "start": "node src/server/app.js"
   },
+  "engines": {
+    "node" : "0.12.x"
+    },
   "dependencies": {
     "bower": "^1.4.1",
     "express": "^4.13.1",

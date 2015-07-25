@@ -8,9 +8,9 @@ var logger = require('morgan');
 var port = process.env.PORT || 8686;
 var environment = process.env.NODE_ENV;
 
-var database = environment === 'build' ? 'mongodb://public:dare@ds047592.mongolab.com:47592/erowid' : 'mongodb://localhost/erowid';
+var dbUrl = environment === 'build' ? 'mongodb://public:dare@ds047592.mongolab.com:47592/erowid' : 'mongodb://localhost/erowid';
 
-mongoose.connect(database);
+mongoose.connect(dbUrl);
 var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', function() {
