@@ -1,36 +1,36 @@
 module.exports = function() {
     var client = './src/client/';
     var clientApp = client + 'app/';
-    var temp = './.tmp/';
     var server = './src/server/';
+    var temp = './.tmp/';
     var config = {
-        index: client + 'index.html',
-        client: client,
-        temp: temp,
-        server: server,
-        build: './build/',
-        html: clientApp + '**/*.html',
-        images: client + 'images/**/*.*',
         alljs: [
           './src/**/*.js',
           './*.js',
           '!./modifyDocsServer.js'
         ],
-        js: [
-          clientApp + '**/*.module.js',
-          clientApp + '**/*.js'
-        ],
-        less: client + 'styles/style.less',
-        css: temp + 'style.css',
         bower: {
             json: require('./bower.json'),
             directory: './bower_components',
             ignorePath: '../..'
         },
-        nodeServer: server + 'app.js',
-        defaultPort: 8686,
         browserReloadDelay: 1000,
+        build: './build/',
+        client: client,
+        css: temp + 'style.css',
+        defaultPort: 8686,
+        html: clientApp + '**/*.html',
         htmlTemplates: clientApp + '**/*.html',
+        images: client + 'images/**/*.*',
+        index: client + 'index.html',
+        js: [
+          clientApp + '**/*.module.js',
+          clientApp + '**/*.js'
+        ],
+        less: client + 'styles/style.less',
+        nodeServer: server + 'app.js',
+        server: server,
+        temp: temp,
         templateCache: {
             file: 'templates.js',
             options: {
