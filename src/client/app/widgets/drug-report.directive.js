@@ -8,7 +8,7 @@
             templateUrl: 'app/widgets/drug-report.html',
             restrict: 'E',
             controller: function($scope, $timeout) {
-                $scope.w = $('.drug-report').width();
+                $scope.w = $('.drug-report').width()-$scope.d3Options.padding;
                 $scope.h = $('.drug-report').height();
 
                 $scope.drugRender = function(drug) {
