@@ -114,6 +114,11 @@
                             .attr('fill', 'white')
                             .text(drug.average.toFixed(3));
 
+                        //tooltips
+                        var tip = d3.tip().attr('class', 'd3-tip').html(function(d) {return d.title});
+
+                        svg.call(tip);
+
                         // bind circles to drug experience data
                         var circles = svg.selectAll('circle')
                             .data(drug.experiences)
@@ -138,6 +143,8 @@
                                     return 'yellow';
                                 }
                             })
+                            .on('mouseover', tip.show)
+                            .on('mouseout', tip.hide);
                             /**
                             .attr('stroke', function(d) {
                                 if (d.score === lowestExp) {
