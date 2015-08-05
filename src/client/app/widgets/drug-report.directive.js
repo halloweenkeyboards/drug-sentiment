@@ -115,7 +115,7 @@
                             .text(drug.average.toFixed(3));
 
                         //tooltips
-                        var tip = d3.tip().attr('class', 'd3-tip').html(function(d) {return d.title});
+                        var tip = d3.tip().attr('class', 'd3-tip').html(function(d) {return d.title + "<br />" + d.score});
 
                         svg.call(tip);
 
