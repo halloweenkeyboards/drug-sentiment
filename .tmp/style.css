@@ -75,6 +75,9 @@ body p span {
   top: 100%;
   left: 0;
 }
+svg.bg-pattern {
+  display: none;
+}
 [ng\:cloak],
 [ng-cloak],
 [data-ng-cloak],

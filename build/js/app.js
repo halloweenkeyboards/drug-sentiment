@@ -1,4 +1,118 @@
 (function() {
+
+    'use strict';
+
+    angular.module('app', [
+        /* Shared modules */
+        'app.drugs'
+    ]);
+
+})();
+
+(function() {
+    'use strict';
+
+    angular
+        .module('app.drugs', []);
+
+})();
+
+(function() {
+    'use strict';
+
+    angular
+    .module('app.drugs')
+    .controller('Drugs', Drugs);
+
+    Drugs.$inject = ['$scope', '$http'];
+
+    function Drugs($scope, $http) {
+        $scope.title = 'the final report on drug experience sentiment';
+        $scope.drugs = [];
+        $scope.w = $('.container-fluid').width();
+        $scope.h = $('.container-fluid').height();
+
+        angular.element(document).ready(function() {
+            $scope.getDrugs();
+            d3.select(window).on('resize', resize);
+        });
+
+        function resize() {
+            console.log('screen resizd');
+            console.log('screen width: ' + $('.drug-report').width() + ' pixels');
+        }
+
+        $scope.getDrugs = function() {
+            $http.get('/api/drugs')
+            .success(function(data) {
+                var minimumExps = 75;
+                var culledData = [];
+                _.each(data, function(doc) {
+                    if (doc.experiences.length >= minimumExps) {
+                        culledData.push(doc);
+                    }
+                });
+                $scope.drugs = culledData;
+                //$scope.drawD3();
+            })
+            .error(function(data) {
+                console.log('error :' + data);
+            });
+        };
+
+        $scope.meetsMinimum = function(drug) {
+            var minimum = 50;
+            if (drug.experiences.length >= minimum) {
+                return true;
+            } else {
+                return false;
+            }
+        };
+    }
+})();
+
+
+(function() {
+    'use strict';
+
+    angular
+    .module('app.drugs')
+    .directive('drugList', function() {
+        return {
+            templateUrl: 'app/widgets/drug-list.html',
+            restrict: 'E',
+            controller: function($scope) {
+                var padding = 25;
+                var xScale = d3.scale.linear()
+                        .domain([-1, 1])
+                        .range([0 + padding, $scope.w - padding]);
+                $scope.d3Options = {
+                    pieRadius: 150,
+                    pieW: $scope.w * 1.5,
+                    pieH: 335,
+                    padding: padding,
+                    colorBuffer: 55,
+                    colors: {
+                        designerDrug: '#19ffbe',
+                        plinky: '#ff195b'
+                    },
+                    newLineY: 18,
+                    circleRadius: 10,
+                    xScale: xScale,
+                    rgbScale: d3.scale.linear()
+                        .domain([0, 1])
+                        .range([255, 0]),
+                    xAxis: d3.svg.axis()
+                        .scale(xScale)
+                        .orient('bottom')
+                        .ticks(3)
+                };
+            }
+        };
+    });
+})();
+
+(function() {
     'use strict';
 
     angular
@@ -186,3 +300,6 @@
         };
     });
 })();
+
+angular.module("app").run(["$templateCache", function($templateCache) {$templateCache.put("app/widgets/drug-list.html","<div ng-repeat=\"drug in drugs\" class=drug-report ng-attr-id={{drug.cssId}} data-stellar-background-ratio=0.5><drug-report></drug-report></div>");
+$templateCache.put("app/widgets/drug-report.html","<svg ng-attr-width={{w}} ng-attr-height={{h}} ng-init=drugRender(drug)></svg>");}]);
