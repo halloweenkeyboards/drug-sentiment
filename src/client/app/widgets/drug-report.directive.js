@@ -32,6 +32,7 @@
                         var svg = d3.select('.drug-report#' + drug.cssId + ' svg');
                         var reportElement = document.getElementById(drug.cssId);
 
+                        // conditional statment to assign drug-specific variables (styles)
                         if (drug.name === '2C-I' || drug.name === '2C-B' || drug.name === '2C-T-2' || drug.name === '2C-E' || drug.name === '2C-T-7') {
                             var svgs = document.getElementsByClassName('bg-pattern');
                             var urls = new Array();
@@ -53,6 +54,7 @@
                             var pieTextColor = 'white';
                         }
 
+                        // conditional statement to assign drug name color
                         if (drug.name === 'MDMA') {
                             var drugNameColor = '#07566b';
                         } else if (drug.name === 'DMT') {
