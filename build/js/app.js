@@ -159,6 +159,12 @@
                             }
                             var url = urls.join(',');
                             reportElement.style.backgroundImage = url;
+
+                            var piePositiveColor = 'white';
+                            var pieNegativeColor = 'black';                            
+                        } else {
+                            var piePositiveColor = 'blue';
+                            var pieNegativeColor = 'red';
                         }
 
                         // add group to svg for pie chart
@@ -181,9 +187,9 @@
                             .attr('d', arc)
                             .attr('fill', function(d) {
                                 if (d.data.label === 'positive') {
-                                    return 'blue';
+                                    return piePositiveColor;
                                 } else {
-                                    return 'red';
+                                    return pieNegativeColor;
                                 }
                             });
 
