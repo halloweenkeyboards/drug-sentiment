@@ -30,21 +30,15 @@ body {
     &#@{name} {
           svg path {
               opacity: 1;
-          }      
+          }
+          .axis path, .axis line, .axis text {
+              fill: none;
+              stroke: white;
+              shape-rendering: crispEdges;
+          }
     }
   }
 }
-
-
-
-/*
-.drug-report#d2c-e, .drug-report#d2c-i, .drug-report#d2c-e, .drug-report#d2c-b, .drug-report#d2c-t-2, .drug-report#d2c-t-7 {
-    height: @reportHeight;
-        svg path {
-            opacity: 1;
-        }
-}
-*/
 
 #dmdma {
     background-color: darken(@purple, 10%);
@@ -80,6 +74,16 @@ body {
     stroke: black;
     shape-rendering: crispEdges;
 }
+
+/*
+.for(@twoCSeries); .-each(@name) {
+  #@{name} {
+    .axis text {
+        stroke: white;
+    }
+  }      
+}
+*/
 
 /*
 #d2c-e .axis path, #d2c-e .axis line, #d2c-e .axis text {

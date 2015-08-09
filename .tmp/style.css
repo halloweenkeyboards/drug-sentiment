@@ -18,29 +18,63 @@ body p span {
 .drug-report#d2c-e svg path {
   opacity: 1;
 }
+.drug-report#d2c-e .axis path,
+.drug-report#d2c-e .axis line,
+.drug-report#d2c-e .axis text {
+  fill: none;
+  stroke: white;
+  shape-rendering: crispEdges;
+}
 .drug-report#d2c-i svg path {
   opacity: 1;
+}
+.drug-report#d2c-i .axis path,
+.drug-report#d2c-i .axis line,
+.drug-report#d2c-i .axis text {
+  fill: none;
+  stroke: white;
+  shape-rendering: crispEdges;
 }
 .drug-report#d2c-e svg path {
   opacity: 1;
 }
+.drug-report#d2c-e .axis path,
+.drug-report#d2c-e .axis line,
+.drug-report#d2c-e .axis text {
+  fill: none;
+  stroke: white;
+  shape-rendering: crispEdges;
+}
 .drug-report#d2c-b svg path {
   opacity: 1;
+}
+.drug-report#d2c-b .axis path,
+.drug-report#d2c-b .axis line,
+.drug-report#d2c-b .axis text {
+  fill: none;
+  stroke: white;
+  shape-rendering: crispEdges;
 }
 .drug-report#d2c-t-2 svg path {
   opacity: 1;
 }
+.drug-report#d2c-t-2 .axis path,
+.drug-report#d2c-t-2 .axis line,
+.drug-report#d2c-t-2 .axis text {
+  fill: none;
+  stroke: white;
+  shape-rendering: crispEdges;
+}
 .drug-report#d2c-t-7 svg path {
   opacity: 1;
 }
-/*
-.drug-report#d2c-e, .drug-report#d2c-i, .drug-report#d2c-e, .drug-report#d2c-b, .drug-report#d2c-t-2, .drug-report#d2c-t-7 {
-    height: @reportHeight;
-        svg path {
-            opacity: 1;
-        }
+.drug-report#d2c-t-7 .axis path,
+.drug-report#d2c-t-7 .axis line,
+.drug-report#d2c-t-7 .axis text {
+  fill: none;
+  stroke: white;
+  shape-rendering: crispEdges;
 }
-*/
 #dmdma {
   background-color: #e6425e;
   background-image: url(../images/mdma.svg);
@@ -71,6 +105,15 @@ body p span {
   stroke: black;
   shape-rendering: crispEdges;
 }
+/*
+.for(@twoCSeries); .-each(@name) {
+  #@{name} {
+    .axis text {
+        stroke: white;
+    }
+  }      
+}
+*/
 /*
 #d2c-e .axis path, #d2c-e .axis line, #d2c-e .axis text {
     fill: none;
