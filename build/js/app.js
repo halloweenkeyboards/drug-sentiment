@@ -147,8 +147,6 @@
                         var reportElement = document.getElementById(drug.cssId);
 
                         if (drug.name === '2C-I' || drug.name === '2C-B' || drug.name === '2C-T-2' || drug.name === '2C-E' || drug.name === '2C-T-7') {
-                            //console.log('I found two cee e');
-                            //reportElement.style.backgroundColor = '#ffffff';
                             var svgs = document.getElementsByClassName('bg-pattern');
                             var urls = new Array();
                             for (var i=0; i<svgs.length; i++) {
@@ -161,10 +159,12 @@
                             reportElement.style.backgroundImage = url;
 
                             var piePositiveColor = 'white';
-                            var pieNegativeColor = 'black';                            
+                            var pieNegativeColor = 'black';
+                            var pieTextColor = '#07566b';
                         } else {
                             var piePositiveColor = 'blue';
                             var pieNegativeColor = 'red';
+                            var pieTextColor = 'white';
                         }
 
                         // add group to svg for pie chart
@@ -197,7 +197,7 @@
                         svg.append('text')
                             .attr('x', ($scope.w / 3) * 2)
                             .attr('y', $scope.d3Options.newLineY * 6)
-                            .attr('fill', 'white')
+                            .attr('fill', pieTextColor)
                             .text(drug.positive + '% positive');
 
                         // append d3 axis
