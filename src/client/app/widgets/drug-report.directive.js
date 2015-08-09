@@ -53,6 +53,14 @@
                             var pieTextColor = 'white';
                         }
 
+                        if (drug.name === 'MDMA') {
+                            var drugNameColor = '#07566b';
+                        } else if (drug.name === 'DMT') {
+                            var drugNameColor = 'black';
+                        } else {
+                            var drugNameColor = $scope.d3Options.colors.plinky;
+                        }
+
                         // add group to svg for pie chart
                         var pieG = svg.append('g')
                             .attr('transform', 'translate(' + ($scope.d3Options.pieW / 2) + ',' + ($scope.d3Options.pieH / 2) + ')');
@@ -110,15 +118,7 @@
                                     return $scope.w - $scope.d3Options.padding;
                                 }
                             })
-                            .attr('fill', function() {
-                                if (drug.name === 'DMT') {
-                                    return 'black';
-                                } else if (drug.name === 'MDMA') {
-                                    return '#07566b';
-                                } else {
-                                    return $scope.d3Options.colors.plinky;
-                                }
-                            })
+                            .attr('fill', drugNameColor)
                             .attr('font-weight', 'bold')
                             .text(drug.name);
 
