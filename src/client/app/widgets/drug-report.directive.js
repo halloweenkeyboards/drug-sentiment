@@ -48,10 +48,14 @@
                             var piePositiveColor = 'white';
                             var pieNegativeColor = 'black';
                             var pieTextColor = '#07566b';
+
+                            var sentimentScoreColor = 'white';
                         } else {
                             var piePositiveColor = 'blue';
                             var pieNegativeColor = 'red';
                             var pieTextColor = 'white';
+
+                            var sentimentScoreColor = 'white'
                         }
 
                         // conditional statement to assign drug name color
@@ -137,7 +141,7 @@
                             .attr('x', 15)
                             .attr('y', $scope.d3Options.newLineY * 12)
                             .attr('font-size', 90)
-                            .attr('fill', 'white')
+                            .attr('fill', sentimentScoreColor)
                             .text(drug.average.toFixed(3));
 
                         //tooltips
