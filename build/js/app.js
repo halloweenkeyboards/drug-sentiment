@@ -173,6 +173,8 @@
                             var drugNameColor = '#07566b';
                         } else if (drug.name === 'DMT') {
                             var drugNameColor = 'black';
+                        } else if (drug.name === '2C-I' || drug.name === '2C-B' || drug.name === '2C-T-2' || drug.name === '2C-E' || drug.name === '2C-T-7') {
+                            var drugNameColor = 'white';
                         } else {
                             var drugNameColor = $scope.d3Options.colors.plinky;
                         }
