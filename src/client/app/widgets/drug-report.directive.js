@@ -50,12 +50,14 @@
                             var pieTextColor = '#07566b';
 
                             var sentimentScoreColor = 'white';
+                            var experienceCountColor = 'white';
                         } else {
                             var piePositiveColor = 'blue';
                             var pieNegativeColor = 'red';
                             var pieTextColor = 'white';
 
-                            var sentimentScoreColor = 'white'
+                            var sentimentScoreColor = 'white';
+                            var experienceCountColor = 'black';
                         }
 
                         // conditional statement to assign drug name color
@@ -134,6 +136,7 @@
                         svg.append('text')
                             .attr('x', 15)
                             .attr('y', $scope.d3Options.newLineY * 5)
+                            .attr('fill', experienceCountColor)
                             .text(drug.experiences.length + ' experiences');
 
                         // text - average sentiment score

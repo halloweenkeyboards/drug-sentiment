@@ -15,18 +15,12 @@ body p span {
 .drug-report svg path {
   opacity: 0.5;
 }
-.drug-report#d2c-e svg path {
-  opacity: 1;
-}
 .drug-report#d2c-e .axis path,
 .drug-report#d2c-e .axis line,
 .drug-report#d2c-e .axis text {
   fill: none;
   stroke: white;
   shape-rendering: crispEdges;
-}
-.drug-report#d2c-i svg path {
-  opacity: 1;
 }
 .drug-report#d2c-i .axis path,
 .drug-report#d2c-i .axis line,
@@ -35,18 +29,12 @@ body p span {
   stroke: white;
   shape-rendering: crispEdges;
 }
-.drug-report#d2c-e svg path {
-  opacity: 1;
-}
 .drug-report#d2c-e .axis path,
 .drug-report#d2c-e .axis line,
 .drug-report#d2c-e .axis text {
   fill: none;
   stroke: white;
   shape-rendering: crispEdges;
-}
-.drug-report#d2c-b svg path {
-  opacity: 1;
 }
 .drug-report#d2c-b .axis path,
 .drug-report#d2c-b .axis line,
@@ -55,18 +43,12 @@ body p span {
   stroke: white;
   shape-rendering: crispEdges;
 }
-.drug-report#d2c-t-2 svg path {
-  opacity: 1;
-}
 .drug-report#d2c-t-2 .axis path,
 .drug-report#d2c-t-2 .axis line,
 .drug-report#d2c-t-2 .axis text {
   fill: none;
   stroke: white;
   shape-rendering: crispEdges;
-}
-.drug-report#d2c-t-7 svg path {
-  opacity: 1;
 }
 .drug-report#d2c-t-7 .axis path,
 .drug-report#d2c-t-7 .axis line,
@@ -75,15 +57,30 @@ body p span {
   stroke: white;
   shape-rendering: crispEdges;
 }
-.drug-report#dlsd svg path {
-  opacity: 1;
-}
 .drug-report#dlsd .axis path,
 .drug-report#dlsd .axis line,
 .drug-report#dlsd .axis text {
   fill: none;
   stroke: white;
   shape-rendering: crispEdges;
+}
+.drug-report#d2c-e svg path {
+  opacity: 1;
+}
+.drug-report#d2c-i svg path {
+  opacity: 1;
+}
+.drug-report#d2c-e svg path {
+  opacity: 1;
+}
+.drug-report#d2c-b svg path {
+  opacity: 1;
+}
+.drug-report#d2c-t-2 svg path {
+  opacity: 1;
+}
+.drug-report#d2c-t-7 svg path {
+  opacity: 1;
 }
 #dmdma {
   background-color: #e6425e;

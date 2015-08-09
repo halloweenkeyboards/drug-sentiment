@@ -1,6 +1,7 @@
 @reportHeight: 350px;
 
 @whiteAxies: d2c-e, d2c-i, d2c-e, d2c-b, d2c-t-2, d2c-t-7, dlsd;
+@opaquePieChart: d2c-e, d2c-i, d2c-e, d2c-b, d2c-t-2, d2c-t-7;
 
 @import "colors";
 @import "for";
@@ -28,13 +29,20 @@ body {
 .drug-report {
   .for(@whiteAxies); .-each(@name) {
     &#@{name} {
-          svg path {
-              opacity: 1;
-          }
           .axis path, .axis line, .axis text {
               fill: none;
               stroke: white;
               shape-rendering: crispEdges;
+          }
+    }
+  }
+}
+
+.drug-report {
+  .for(@opaquePieChart); .-each(@name) {
+    &#@{name} {
+          svg path {
+              opacity: 1;
           }
     }
   }
