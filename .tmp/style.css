@@ -15,18 +15,24 @@ body p span {
 .drug-report svg path {
   opacity: 0.5;
 }
-/*
-.drug-report {
-  .for(@twoCSeries); .-each(@name) {
-    &@{name} {
-      height: @reportHeight;
-          svg path {
-              opacity: 1;
-          }      
-    }
-  }
+.drug-report#d2c-e svg path {
+  opacity: 1;
 }
-*/
+.drug-report#d2c-i svg path {
+  opacity: 1;
+}
+.drug-report#d2c-e svg path {
+  opacity: 1;
+}
+.drug-report#d2c-b svg path {
+  opacity: 1;
+}
+.drug-report#d2c-t-2 svg path {
+  opacity: 1;
+}
+.drug-report#d2c-t-7 svg path {
+  opacity: 1;
+}
 /*
 .drug-report#d2c-e, .drug-report#d2c-i, .drug-report#d2c-e, .drug-report#d2c-b, .drug-report#d2c-t-2, .drug-report#d2c-t-7 {
     height: @reportHeight;
