@@ -1,6 +1,6 @@
 @reportHeight: 350px;
 
-@twoCSeries: d2c-e, d2c-i, d2c-e, d2c-b, d2c-t-2, d2c-t-7;
+@whiteAxies: d2c-e, d2c-i, d2c-e, d2c-b, d2c-t-2, d2c-t-7, dlsd;
 
 @import "colors";
 @import "for";
@@ -26,7 +26,7 @@ body {
 
 
 .drug-report {
-  .for(@twoCSeries); .-each(@name) {
+  .for(@whiteAxies); .-each(@name) {
     &#@{name} {
           svg path {
               opacity: 1;

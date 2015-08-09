@@ -75,6 +75,16 @@ body p span {
   stroke: white;
   shape-rendering: crispEdges;
 }
+.drug-report#dlsd svg path {
+  opacity: 1;
+}
+.drug-report#dlsd .axis path,
+.drug-report#dlsd .axis line,
+.drug-report#dlsd .axis text {
+  fill: none;
+  stroke: white;
+  shape-rendering: crispEdges;
+}
 #dmdma {
   background-color: #e6425e;
   background-image: url(../images/mdma.svg);
