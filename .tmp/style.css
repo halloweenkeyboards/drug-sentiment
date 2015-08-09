@@ -15,6 +15,22 @@ body p span {
 .drug-report svg path {
   opacity: 0.5;
 }
+.drug-report#d2c-e,
+.drug-report#d2c-i,
+.drug-report#d2c-e,
+.drug-report#d2c-b,
+.drug-report#d2c-t-2,
+.drug-report#d2c-t-7 {
+  height: 350px;
+}
+.drug-report#d2c-e svg path,
+.drug-report#d2c-i svg path,
+.drug-report#d2c-e svg path,
+.drug-report#d2c-b svg path,
+.drug-report#d2c-t-2 svg path,
+.drug-report#d2c-t-7 svg path {
+  opacity: 1;
+}
 #dmdma {
   background-color: #e6425e;
   background-image: url(../images/mdma.svg);
