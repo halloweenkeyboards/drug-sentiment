@@ -6,8 +6,7 @@ module.exports = function() {
     var config = {
         alljs: [
           './src/**/*.js',
-          './*.js',
-          '!./modifyDocsServer.js'
+          './*.js'
         ],
         bower: {
             json: require('./bower.json'),
