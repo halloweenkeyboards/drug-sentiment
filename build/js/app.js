@@ -273,6 +273,9 @@
                         var circles = svg.selectAll('circle')
                             .data(drug.experiences)
                             .enter()
+                            .append("a")
+                            .attr('target', '_blank')
+                            .attr("xlink:href", function(d) {return "https://www.erowid.org/experiences/exp.php?ID=" + d.number})
                             .append('circle');
 
                         // circles - main attrs
@@ -294,7 +297,8 @@
                                 }
                             })
                             .on('mouseover', tip.show)
-                            .on('mouseout', tip.hide);
+                            .on('mouseout', tip.hide)
+
                             /**
                             .attr('stroke', function(d) {
                                 if (d.score === lowestExp) {
