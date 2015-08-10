@@ -99,6 +99,15 @@ body p span {
   background-size: 36%;
   background-attachment: fixed;
 }
+#d5-meo-dmt {
+  background-color: #f24949;
+  color: #4e443a;
+  background-image: url(../images/5-meo-dmt.svg);
+  background-repeat: no-repeat;
+  background-position: 75% 50%;
+  background-size: 36%;
+  background-attachment: fixed;
+}
 #dlsd {
   background-image: url(../images/nebula1.jpg);
   background-repeat: no-repeat;

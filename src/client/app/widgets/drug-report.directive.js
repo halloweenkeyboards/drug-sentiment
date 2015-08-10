@@ -63,7 +63,7 @@
                         // conditional statement to assign drug name color
                         if (drug.name === 'MDMA') {
                             var drugNameColor = '#07566b';
-                        } else if (drug.name === 'DMT') {
+                        } else if (drug.name === 'DMT' || drug.name === '5-MeO-DMT') {
                             var drugNameColor = 'black';
                         } else if (drug.name === '2C-I' || drug.name === '2C-B' || drug.name === '2C-T-2' || drug.name === '2C-E' || drug.name === '2C-T-7') {
                             var drugNameColor = 'white';
