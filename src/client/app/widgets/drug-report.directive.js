@@ -102,6 +102,7 @@
                             .attr('x', ($scope.w / 3) * 2)
                             .attr('y', $scope.d3Options.newLineY * 6)
                             .attr('fill', pieTextColor)
+                            .attr('font-size', 20)
                             .text(drug.positive + '% positive');
 
                         // append d3 axis
