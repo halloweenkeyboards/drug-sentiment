@@ -8,12 +8,14 @@
   },
   "engines": {
     "node" : "0.12.x"
-    },
+  },
   "dependencies": {
     "bower": "^1.4.1",
     "express": "^4.13.1",
     "mongoose": "^4.0.6",
     "morgan": "^1.6.1",
+  },
+  "devDependencies": {
     "browser-sync": "^2.7.13",
     "del": "^1.2.0",
     "gulp": "^3.9.0",
