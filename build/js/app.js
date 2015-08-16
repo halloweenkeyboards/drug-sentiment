@@ -45,7 +45,7 @@
         $scope.getDrugs = function() {
             $http.get('/api/drugs')
             .success(function(data) {
-                var minimumExps = 75;
+                var minimumExps = 0;
                 var culledData = [];
                 _.each(data, function(doc) {
                     if (doc.experiences.length >= minimumExps) {
