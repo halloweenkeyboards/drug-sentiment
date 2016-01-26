@@ -13,6 +13,9 @@
         $scope.w = $('.container-fluid').width();
         $scope.h = $('.container-fluid').height();
 
+        $scope.currentPage = 1;
+        $scope.currentProjection = [];
+
         angular.element(document).ready(function() {
             $scope.getDrugs();
             d3.select(window).on('resize', resize);
@@ -34,11 +37,20 @@
                     }
                 });
                 $scope.drugs = culledData;
+                $scope.assignProjection(1);
                 //$scope.drawD3();
             })
             .error(function(data) {
                 console.log('error :' + data);
             });
+        };
+
+        $scope.assignProjection = function(page) {
+            $scope.currentProjection = [];
+            $scope.currentPage = page;
+            for (var x = (page * 6) - 6; x < page * 6; ++x) {
+                $scope.currentProjection.push($scope.drugs[x]);
+            }
         };
 
         $scope.meetsMinimum = function(drug) {

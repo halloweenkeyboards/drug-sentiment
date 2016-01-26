@@ -10,8 +10,27 @@
     <div class="container-fluid">
         <h1 class="jumbotron">{{title}}</h1>
     </div>
-    <div class="container" id="intro">
+    <div id="intro">
 
+    </div>
+    <div id="pagination-and-sort" ng-show='currentProjection'>
+        <nav><ul class="pagination pagination-lg">
+            <li>
+              <a href="#" aria-label="Previous">
+                <span aria-hidden="true">&laquo;</span>
+              </a>
+            </li>
+            <li  ng-click='assignProjection(1)' ng-class='{active: currentPage==1}'><a href="#">1</a></li>
+            <li ng-click='assignProjection(2)' ng-class='{active: currentPage==2}'><a href="#">2</a></li>
+            <li ng-click='assignProjection(3)' ng-class='{active: currentPage==3}'><a href="#">3</a></li>
+            <li ng-click='assignProjection(4)' ng-class='{active: currentPage==4}'><a href="#">4</a></li>
+            <li ng-click='assignProjection(5)' ng-class='{active: currentPage==5}'><a href="#">5</a></li>
+            <li>
+              <a href="#" aria-label="Next">
+                <span aria-hidden="true">&raquo;</span>
+              </a>
+            </li>
+        </ul></nav>
     </div>
     <div class="drug-list">
         <drug-list></drug-list>
@@ -28,6 +47,26 @@
         </linearGradient>
         <rect width='100%' height='100%' fill='url(#g)'/>
     </svg>
+
+    <div id="bottom-pagination" ng-show='currentProjection'>
+        <nav><ul class="pagination pagination-lg">
+            <li>
+              <a href="#" aria-label="Previous">
+                <span aria-hidden="true">&laquo;</span>
+              </a>
+            </li>
+            <li  ng-click='assignProjection(1)' ng-class='{active: currentPage==1}'><a href="#">1</a></li>
+            <li ng-click='assignProjection(2)' ng-class='{active: currentPage==2}'><a href="#">2</a></li>
+            <li ng-click='assignProjection(3)' ng-class='{active: currentPage==3}'><a href="#">3</a></li>
+            <li ng-click='assignProjection(4)' ng-class='{active: currentPage==4}'><a href="#">4</a></li>
+            <li ng-click='assignProjection(5)' ng-class='{active: currentPage==5}'><a href="#">5</a></li>
+            <li>
+              <a href="#" aria-label="Next">
+                <span aria-hidden="true">&raquo;</span>
+              </a>
+            </li>
+        </ul></nav>
+    </div>
 
     <script src="js/lib.js"></script>
 

@@ -1,2 +1,2 @@
-angular.module("app").run(["$templateCache", function($templateCache) {$templateCache.put("app/widgets/drug-list.html","<div ng-repeat=\"drug in drugs\" class=drug-report ng-attr-id={{drug.cssId}} data-stellar-background-ratio=0.5><drug-report></drug-report></div>");
+angular.module("app").run(["$templateCache", function($templateCache) {$templateCache.put("app/widgets/drug-list.html","<div ng-repeat=\"drug in currentProjection\" class=drug-report ng-attr-id={{drug.cssId}} data-stellar-background-ratio=0.5><drug-report></drug-report></div>");
 $templateCache.put("app/widgets/drug-report.html","<svg ng-attr-width={{w}} ng-attr-height={{h}} ng-init=drugRender(drug)></svg>");}]);
