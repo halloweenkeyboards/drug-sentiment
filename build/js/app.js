@@ -34,6 +34,7 @@
 
         $scope.currentPage = 1;
         $scope.currentProjection = [];
+        $scope.sortPreference = { sortCriteria : 'average', title : 'Average Experience Sentiment' };
 
         angular.element(document).ready(function() {
             $scope.getDrugs();
@@ -71,6 +72,25 @@
                 $scope.currentProjection.push($scope.drugs[x]);
             }
         };
+
+        $scope.sortCollection = function(sortCriteria) {
+            if (sortCriteria == 'average') {
+                $scope.sortPreference = { sortCriteria : 'average', title : 'Average Experience Sentiment' };
+            } else if (sortCriteria == 'experiences') {
+                $scope.sortPreference = { sortCriteria : 'experiences', title : 'Number of Experiences' };
+            } else if (sortCriteria == 'positive') {
+                $scope.sortPreference = { sortCriteria : 'positive', title : '% Positive Experiences' };
+            } else if (sortCriteria == 'name') {
+                $scope.sortPreference = { sortCriteria : 'name', title : 'Alphabetical' };
+            }
+            
+            $scope.drugs = _.sortBy($scope.drugs, sortCriteria);
+            
+            if (sortCriteria != 'name') {
+                $scope.drugs = $scope.drugs.reverse();
+            }
+            $scope.assignProjection(1);
+        }
 
         $scope.meetsMinimum = function(drug) {
             var minimum = 50;

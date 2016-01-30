@@ -21,24 +21,36 @@
     <div id="intro">
 
     </div>
-    <div id="pagination-and-sort">
-        <nav><ul class="pagination pagination-lg">
-            <li>
-              <a href="#" aria-label="Previous">
-                <span aria-hidden="true">&laquo;</span>
-              </a>
-            </li>
-            <li  ng-click='assignProjection(1)' ng-class='{active: currentPage==1}'><a href="#">1</a></li>
-            <li ng-click='assignProjection(2)' ng-class='{active: currentPage==2}'><a href="#">2</a></li>
-            <li ng-click='assignProjection(3)' ng-class='{active: currentPage==3}'><a href="#">3</a></li>
-            <li ng-click='assignProjection(4)' ng-class='{active: currentPage==4}'><a href="#">4</a></li>
-            <li ng-click='assignProjection(5)' ng-class='{active: currentPage==5}'><a href="#">5</a></li>
-            <li>
-              <a href="#" aria-label="Next">
-                <span aria-hidden="true">&raquo;</span>
-              </a>
-            </li>
-        </ul></nav>
+    <div class="container-fluid">
+        <div class="dropdown">
+            <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Sort By {{sortPreference.title}}
+            <span class="caret"></span></button>
+            <ul class="dropdown-menu">
+                <li ng-click="sortCollection('average')"><a>Average Sentiment Score</a></li>
+                <li ng-click="sortCollection('positive')"><a>% Positive Experiences</a></li>
+                <li ng-click="sortCollection('name')"><a>Alphabetical</a></li>
+                <li ng-click="sortCollection('experiences')"><a>Number of Exeperiences</a></li>
+            </ul>
+        </div>
+        <div id="top-pagination">
+            <nav><ul class="pagination pagination-lg">
+                <li>
+                  <a href="#" aria-label="Previous">
+                    <span aria-hidden="true">&laquo;</span>
+                  </a>
+                </li>
+                <li  ng-click='assignProjection(1)' ng-class='{active: currentPage==1}'><a href="#">1</a></li>
+                <li ng-click='assignProjection(2)' ng-class='{active: currentPage==2}'><a href="#">2</a></li>
+                <li ng-click='assignProjection(3)' ng-class='{active: currentPage==3}'><a href="#">3</a></li>
+                <li ng-click='assignProjection(4)' ng-class='{active: currentPage==4}'><a href="#">4</a></li>
+                <li ng-click='assignProjection(5)' ng-class='{active: currentPage==5}'><a href="#">5</a></li>
+                <li>
+                  <a href="#" aria-label="Next">
+                    <span aria-hidden="true">&raquo;</span>
+                  </a>
+                </li>
+            </ul></nav>
+        </div>
     </div>
     <div class="drug-list">
         <drug-list></drug-list>

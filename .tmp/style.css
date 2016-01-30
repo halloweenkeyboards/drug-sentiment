@@ -9,9 +9,12 @@ body p {
 body p span {
   color: #ffff00;
 }
-#pagination-and-sort,
+#top-pagination,
 #bottom-pagination {
   text-align: center;
+}
+.dropdown-menu li {
+  padding: 2px 5px 2px 5px;
 }
 .drug-report {
   height: 350px;
