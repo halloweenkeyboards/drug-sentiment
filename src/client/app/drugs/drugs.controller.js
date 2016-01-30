@@ -13,7 +13,6 @@
         $scope.w = $('.container-fluid').width();
         $scope.h = $('.container-fluid').height();
 
-        $scope.currentPage = 1;
         $scope.currentProjection = [];
         $scope.sortPreference = { sortCriteria : 'average', title : 'Average Experience Sentiment' };
 
@@ -48,7 +47,6 @@
 
         $scope.assignProjection = function(page) {
             $scope.currentProjection = [];
-            $scope.currentPage = page;
             for (var x = (page * 6) - 6; x < page * 6; ++x) {
                 $scope.currentProjection.push($scope.drugs[x]);
             }
