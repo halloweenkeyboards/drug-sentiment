@@ -14,6 +14,8 @@
         $scope.h = $('.container-fluid').height();
 
         $scope.currentProjection = [];
+        $scope.currentPage = 1;
+        var lastPage = 5;
         $scope.sortPreference = { sortCriteria : 'average', title : 'Average Experience Sentiment' };
 
         angular.element(document).ready(function() {
@@ -46,11 +48,22 @@
         };
 
         $scope.assignProjection = function(page) {
+            $scope.currentPage = page;
             $scope.currentProjection = [];
             for (var x = (page * 6) - 6; x < page * 6; ++x) {
                 $scope.currentProjection.push($scope.drugs[x]);
             }
         };
+
+        $scope.turnPage = function(direction) {
+            if (direction == 'forward' && $scope.currentPage < lastPage) {
+                $scope.currentPage += 1;
+                $scope.assignProjection($scope.currentPage);
+            } else if (direction == 'backward' && $scope.currentPage > 1) {
+                $scope.currentPage -= 1;
+                $scope.assignProjection($scope.currentPage);
+            }
+        }
 
         $scope.sortCollection = function(sortCriteria) {
             if (sortCriteria == 'average') {
