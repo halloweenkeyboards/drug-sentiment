@@ -7,10 +7,10 @@
     "url": "https://github.com/halloweenkeyboards/drug-sentiment.git"
   },
   "scripts": {
-    "start" : "NODE_ENV=build node src/server/app.js"
-    },
+    "start": "NODE_ENV=build node src/server/app.js"
+  },
   "engines": {
-    "node" : "0.12.x"
+    "node": "0.12.x"
   },
   "dependencies": {
     "bower": "^1.4.1",
