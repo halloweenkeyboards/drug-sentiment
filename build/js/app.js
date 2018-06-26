@@ -104,6 +104,11 @@
             $scope.assignProjection(1);
         }
 
+        $scope.reverseOrder = function() {
+            $scope.drugs = $scope.drugs.reverse();
+            $scope.assignProjection(1);
+        }
+
         $scope.meetsMinimum = function(drug) {
             var minimum = 50;
             if (drug.experiences.length >= minimum) {
