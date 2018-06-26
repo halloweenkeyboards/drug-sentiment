@@ -306,6 +306,15 @@
                             .attr('fill', sentimentScoreColor)
                             .text(drug.average.toFixed(3));
 
+                        // tetx - "average sentiment"
+                        svg.append('text')
+                            .attr('x', 277)
+                            .attr('y', ($scope.d3Options.newLineY * 12) - 25)
+                            .attr('font-size', 20)
+                            .attr('fill', sentimentScoreColor)
+                            .text("average sentiment score");
+
+
                         //tooltips
                         var tip = d3.tip().attr('class', 'd3-tip')
                             .offset([-10, 0])
