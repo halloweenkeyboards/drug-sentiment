@@ -14,3 +14,14 @@ body{background-color:#3b3b3b}body p{background-color:#080808;color:#fff;padding
 a:hover {
 	cursor: pointer;
 }
+
+#overview p {
+	padding: 12px;
+	margin-bottom: 20px;
+	background-color: #eee;
+	color: black;
+
+}
+#overview p:first-line {
+	text-indent: 20px;
+}
