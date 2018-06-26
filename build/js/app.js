@@ -73,6 +73,18 @@
             }
         };
 
+        $scope.assignProjectionPrevious = function() {
+            if ($scope.currentPage != 1) {
+                $scope.assignProjection($scope.currentPage - 1);
+            }
+        }
+
+        $scope.assignProjectionNext = function() {
+            if ($scope.currentPage < 5) {
+                $scope.assignProjection($scope.currentPage + 1);
+            }
+        }
+
         $scope.sortCollection = function(sortCriteria) {
             if (sortCriteria == 'average') {
                 $scope.sortPreference = { sortCriteria : 'average', title : 'Average Experience Sentiment' };

@@ -26,7 +26,7 @@
         </div>
         <div id="top-pagination">
             <nav><ul class="pagination pagination-lg">
-                <li>
+                <li ng-click='assignProjectionPrevious()'>
                   <a aria-label="Previous">
                     <span aria-hidden="true">&laquo;</span>
                   </a>
@@ -36,7 +36,7 @@
                 <li ng-click='assignProjection(3)' ng-class='{active: currentPage==3}'><a>3</a></li>
                 <li ng-click='assignProjection(4)' ng-class='{active: currentPage==4}'><a>4</a></li>
                 <li ng-click='assignProjection(5)' ng-class='{active: currentPage==5}'><a>5</a></li>
-                <li>
+                <li ng-click='assignProjectionNext()'>
                   <a aria-label="Next">
                     <span aria-hidden="true">&raquo;</span>
                   </a>
@@ -62,7 +62,7 @@
 
     <div id="bottom-pagination">
         <nav><ul class="pagination pagination-lg">
-            <li>
+            <li ng-click='assignProjectionPrevious()'>
               <a aria-label="Previous">
                 <span aria-hidden="true">&laquo;</span>
               </a>
@@ -72,7 +72,7 @@
             <li ng-click='assignProjection(3)' ng-class='{active: currentPage==3}'><a>3</a></li>
             <li ng-click='assignProjection(4)' ng-class='{active: currentPage==4}'><a>4</a></li>
             <li ng-click='assignProjection(5)' ng-class='{active: currentPage==5}'><a>5</a></li>
-            <li>
+            <li ng-click='assignProjectionNext()'>
               <a aria-label="Next">
                 <span aria-hidden="true">&raquo;</span>
               </a>
