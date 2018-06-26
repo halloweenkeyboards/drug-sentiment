@@ -10,3 +10,7 @@ body{background-color:#3b3b3b}body p{background-color:#080808;color:#fff;padding
 	position: absolute;
 	top: 15px;
 }
+
+a:hover {
+	cursor: pointer;
+}
