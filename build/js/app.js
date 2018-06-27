@@ -27,7 +27,6 @@
     Drugs.$inject = ['$scope', '$http'];
 
     function Drugs($scope, $http) {
-        $scope.title = 'the final report on drug experience sentiment';
         $scope.drugs = [];
         $scope.w = $('.container-fluid').width();
         $scope.h = $('.container-fluid').height();
