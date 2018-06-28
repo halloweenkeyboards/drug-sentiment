@@ -32,17 +32,17 @@
         </div>
         <div id="top-pagination">
             <nav><ul class="pagination pagination-lg">
-                <li ng-click='assignProjectionPrevious()'>
+                <li ng-click='assignProjectionPrevious("topNav")'>
                   <a aria-label="Previous">
                     <span aria-hidden="true">&laquo;</span>
                   </a>
                 </li>
-                <li  ng-click='assignProjection(1)' ng-class='{active: currentPage==1}'><a>1</a></li>
-                <li ng-click='assignProjection(2)' ng-class='{active: currentPage==2}'><a>2</a></li>
-                <li ng-click='assignProjection(3)' ng-class='{active: currentPage==3}'><a>3</a></li>
-                <li ng-click='assignProjection(4)' ng-class='{active: currentPage==4}'><a>4</a></li>
-                <li ng-click='assignProjection(5)' ng-class='{active: currentPage==5}'><a>5</a></li>
-                <li ng-click='assignProjectionNext()'>
+                <li  ng-click='assignProjection(1, "topNav")' ng-class='{active: currentPage==1}'><a>1</a></li>
+                <li ng-click='assignProjection(2, "topNav")' ng-class='{active: currentPage==2}'><a>2</a></li>
+                <li ng-click='assignProjection(3, "topNav")' ng-class='{active: currentPage==3}'><a>3</a></li>
+                <li ng-click='assignProjection(4, "topNav")' ng-class='{active: currentPage==4}'><a>4</a></li>
+                <li ng-click='assignProjection(5, "topNav")' ng-class='{active: currentPage==5}'><a>5</a></li>
+                <li ng-click='assignProjectionNext("topNav")'>
                   <a aria-label="Next">
                     <span aria-hidden="true">&raquo;</span>
                   </a>
@@ -68,17 +68,17 @@
 
     <div id="bottom-pagination">
         <nav><ul class="pagination pagination-lg">
-            <li ng-click='assignProjectionPrevious()'>
+            <li ng-click='assignProjectionPrevious("bottomNav")'>
               <a aria-label="Previous">
                 <span aria-hidden="true">&laquo;</span>
               </a>
             </li>
-            <li  ng-click='assignProjection(1)' ng-class='{active: currentPage==1}'><a>1</a></li>
-            <li ng-click='assignProjection(2)' ng-class='{active: currentPage==2}'><a>2</a></li>
-            <li ng-click='assignProjection(3)' ng-class='{active: currentPage==3}'><a>3</a></li>
-            <li ng-click='assignProjection(4)' ng-class='{active: currentPage==4}'><a>4</a></li>
-            <li ng-click='assignProjection(5)' ng-class='{active: currentPage==5}'><a>5</a></li>
-            <li ng-click='assignProjectionNext()'>
+            <li  ng-click='assignProjection(1, "bottomNav")' ng-class='{active: currentPage==1}'><a>1</a></li>
+            <li ng-click='assignProjection(2, "bottomNav")' ng-class='{active: currentPage==2}'><a>2</a></li>
+            <li ng-click='assignProjection(3, "bottomNav")' ng-class='{active: currentPage==3}'><a>3</a></li>
+            <li ng-click='assignProjection(4, "bottomNav")' ng-class='{active: currentPage==4}'><a>4</a></li>
+            <li ng-click='assignProjection(5, "bottomNav")' ng-class='{active: currentPage==5}'><a>5</a></li>
+            <li ng-click='assignProjectionNext("bottomNav")'>
               <a aria-label="Next">
                 <span aria-hidden="true">&raquo;</span>
               </a>

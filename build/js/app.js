@@ -24,9 +24,9 @@
     .module('app.drugs')
     .controller('Drugs', Drugs);
 
-    Drugs.$inject = ['$scope', '$http'];
+    Drugs.$inject = ['$scope', '$http', '$window'];
 
-    function Drugs($scope, $http) {
+    function Drugs($scope, $http, $window) {
         $scope.drugs = [];
         $scope.w = $('.container-fluid').width();
         $scope.h = $('.container-fluid').height();
@@ -64,23 +64,34 @@
             });
         };
 
-        $scope.assignProjection = function(page) {
+        $scope.assignProjection = function(page, navPosition) {
             $scope.currentProjection = [];
             $scope.currentPage = page;
             for (var x = (page * 6) - 6; x < page * 6; ++x) {
                 $scope.currentProjection.push($scope.drugs[x]);
             }
+
+            if (navPosition == "bottomNav") {
+                $window.scrollTo(0,0);
+            }
+
         };
 
-        $scope.assignProjectionPrevious = function() {
+        $scope.assignProjectionPrevious = function(navPosition) {
             if ($scope.currentPage != 1) {
                 $scope.assignProjection($scope.currentPage - 1);
             }
+            if (navPosition == "bottomNav") {
+                $window.scrollTo(0,0);
+            }
         }
 
-        $scope.assignProjectionNext = function() {
+        $scope.assignProjectionNext = function(navPosition) {
             if ($scope.currentPage < 5) {
                 $scope.assignProjection($scope.currentPage + 1);
+            }
+            if (navPosition == "bottomNav") {
+                $window.scrollTo(0,0);
             }
         }
 
