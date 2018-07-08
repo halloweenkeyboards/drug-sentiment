@@ -10,7 +10,9 @@ var environment = process.env.NODE_ENV;
 
 var dbUrl = environment === 'build' ? 'mongodb://public:dare@ds047592.mongolab.com:47592/erowid' : 'mongodb://localhost/erowid';
 
-mongoose.connect(dbUrl);
+mongoose.connect(dbUrl, {
+    useMongoClient: true
+});
 var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', function() {
